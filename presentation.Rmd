@@ -111,7 +111,7 @@ class: inverse, center, middle
 - Born and raised in Brazil
 - Graduated from the University of Campinas with a BSc in Stats
 - Moved to Vancouver with my girlfriend Akari
-- I love math, stats and code
+- I LOVE math, stats and coding
 ]
 
 .pull-right[
