@@ -1,0 +1,285 @@
+---
+title: "Giuseppe"
+subtitle: "A 5 min introduction to myself"
+output:
+    xaringan::moon_reader:
+        self_contained: yes
+        nature:
+            highlightStyle: github
+            highlightLines: true
+            countIncrementalSlides: false
+            slideNumberFormat: ""
+---
+
+class: inverse, center, middle
+
+# Who I am
+
+---
+# Who I am
+
+.pull-left[
+- Born and raised in Brazil
+]
+
+.pull-right[
+![](images/mother.jpg)
+]
+
+---
+# Who I am
+
+.pull-left[
+- Born and raised in Brazil
+]
+
+.pull-right[
+![](images/father.jpg)
+]
+
+
+---
+# Who I am
+
+.pull-left[
+- Born and raised in Brazil
+- Graduated from the University of Campinas with a BSc in Stats
+]
+
+.pull-right[
+![](images/unicamp.jpg)
+]
+
+---
+# Who I am
+
+.pull-left[
+- Born and raised in Brazil
+- Graduated from the University of Campinas with a BSc in Stats
+- Moved to Vancouver with my girlfriend Akari
+]
+
+.pull-right[
+![](images/akari_brazil.jpg)
+]
+
+---
+# Who I am
+
+.pull-left[
+- Born and raised in Brazil
+- Graduated from the University of Campinas with a BSc in Stats
+- Moved to Vancouver with my girlfriend Akari
+]
+
+.pull-right[
+![](images/akari_canada.jpg)
+]
+
+---
+# Who I am
+
+.pull-left[
+- Born and raised in Brazil
+- Graduated from the University of Campinas with a BSc in Stats
+- Moved to Vancouver with my girlfriend Akari
+- I LOVE math, stats and code
+]
+
+.pull-right[
+![](images/math.png)
+]
+
+---
+# Who I am
+
+.pull-left[
+- Born and raised in Brazil
+- Graduated from the University of Campinas with a BSc in Stats
+- Moved to Vancouver with my girlfriend Akari
+- I LOVE math, stats and code
+]
+
+.pull-right[
+![](images/stat.jpg)
+]
+
+---
+# Who I am
+
+.pull-left[
+- Born and raised in Brazil
+- Graduated from the University of Campinas with a BSc in Stats
+- Moved to Vancouver with my girlfriend Akari
+- I love math, stats and code
+]
+
+.pull-right[
+![](images/code.png)
+]
+
+---
+class: inverse, center, middle
+
+# What I **used** to research
+
+---
+# What I **used** to research
+
+.pull-left[
+- **Research area:** Quantitative finance
+]
+
+.pull-right[
+![](images/raining_money.gif)
+]
+
+---
+# What I **used** to research
+
+.pull-left[
+- **Research area:** Quantitative finance
+- **Topics:**
+    - Risk-based portfolios
+]
+
+.pull-right[
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(tidyverse)
+
+set.seed(42)
+
+A_log_returns <- rnorm(100, 0.01, 0.05)
+B_log_returns <- rnorm(100, 0.01, 0.05)
+
+data <- tibble(
+    `Stock A` = exp(cumsum(A_log_returns)),
+    `Stock B` = exp(cumsum(B_log_returns)),
+    Portfolio = (exp(cumsum(A_log_returns)) + exp(cumsum(B_log_returns))) / 2
+)
+
+data %>%
+    mutate(Time = row_number()) %>%
+    pivot_longer(-Time, names_to = "Investment", values_to = "Value") %>%
+    ggplot(aes(x = Time, y = Value, color = Investment)) +
+    geom_line(size = 2) +
+    theme_minimal(16)
+```
+]
+
+---
+# What I **used** to research
+
+.pull-left[
+- **Research area:** Quantitative finance
+- **Topics:**
+    - Risk-based portfolios
+    - High dimensional time series
+]
+
+.pull-right[
+1000 stocks with 10 years of data
+
+≈ 200 parameters per observation 😱
+]
+
+---
+# What I **used** to research
+
+.pull-left[
+- **Research area:** Quantitative finance
+- **Topics:**
+    - Risk-based portfolios
+    - High dimensional time series
+    - Covariance matrix estimators
+]
+
+.pull-right[
+High dimensional + shrinkage = ❤️
+]
+
+
+---
+# What I **used** to research
+
+.pull-left[
+- **Research area:** Quantitative finance
+- **Topics:**
+    - Risk-based portfolios
+    - High dimensional time series
+    - Covariance matrix estimators
+- **Extra:**
+    - [Python package](https://github.com/GiuseppeTT/hdrbp) for my research
+    - Interned at Goldman Sachs
+]
+
+.pull-right[
+]
+
+---
+class: inverse, center, middle
+
+# What I **plan** to research
+
+---
+# What I **plan** to research
+
+.pull-left[
+- Honestly, I'm still figuring it out 😅
+]
+
+.pull-right[
+]
+
+---
+# What I **plan** to research
+
+.pull-left[
+- Honestly, I'm still figuring it out 😅
+- Original talk with Keegan was to develop a model for methylation data based on the negative binomial
+]
+
+.pull-right[
+![](images/keegan.jpg)
+]
+
+---
+# What I **plan** to research
+
+.pull-left[
+- Honestly, I'm still figuring it out 😅
+- Original talk with Keegan was to develop a model for methylation data based on the negative binomial
+- Later Gaby joined for a co supervision and we plan to include causal inference
+]
+
+.pull-right[
+![](images/gaby.png)
+]
+
+---
+# What I **plan** to research
+
+.pull-left[
+- Honestly, I'm still figuring it out 😅
+- Original talk with Keegan was to develop a model for methylation data based on the negative binomial
+- Later Gaby joined for a co supervision and we plan to include causal inference
+- I have to write a proposal till the end of April, so I'll update you soon
+]
+
+.pull-right[
+![](images/kermit_typing.gif)
+]
+
+---
+# What I **plan** to research
+
+.pull-left[
+- Honestly, I'm still figuring it out 😅
+- Original talk with Keegan was to develop a model for methylation data based on the negative binomial
+- Later Gaby joined for a co supervision and we plan to include causal inference
+- I have to write a proposal till the end of April, so I'll update you soon
+- I hope to interact with you a lot 😁
+]
+
+.pull-right[
+]
