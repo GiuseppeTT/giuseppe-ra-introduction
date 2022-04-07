@@ -56,7 +56,7 @@ class: inverse, center, middle
 .pull-left[
 - Born and raised in Brazil
 - Graduated from the University of Campinas with a BSc in Stats
-- Moved to Vancouver with my girlfriend Akari
+- Moved to Vancouver with my girlfriend Akari in 2021
 ]
 
 .pull-right[
